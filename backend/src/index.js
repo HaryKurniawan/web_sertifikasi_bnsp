@@ -36,9 +36,11 @@ app.use((err, req, res, next) => {
     res.status(500).json({ sukses: false, pesan: 'Terjadi kesalahan server' });
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
-    console.log(`📡 Public API: http://localhost:${PORT}/api`);
-    console.log(`🔐 Admin API: http://localhost:${PORT}/api/admin`);
-});
+// Start server (only if not on Vercel)
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
+    });
+}
+
+export default app;
