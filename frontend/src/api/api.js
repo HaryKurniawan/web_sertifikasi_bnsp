@@ -10,7 +10,7 @@ const api = axios.create({
 });
 
 
-// Public
+// Publik
 export const getProyek = async () => {
     const res = await api.get('/proyek');
     return res.data;

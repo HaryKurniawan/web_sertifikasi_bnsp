@@ -1,11 +1,7 @@
-/* App.css - Tambahan style untuk App */
-
-/* Smooth scroll untuk seluruh halaman */
 html {
   scroll-behavior: smooth;
 }
 
-/* Tambahan padding untuk anchor links akibat fixed navbar */
 section[id] {
   scroll-margin-top: 80px;
 }

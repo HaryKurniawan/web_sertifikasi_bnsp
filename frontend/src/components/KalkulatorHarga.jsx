@@ -2,26 +2,29 @@ import { useState } from 'react';
 import { FRAMEWORKS, TYPES, CATEGORIES } from '../constants/pricing';
 import '../styles/kalkulator.css';
 
-// Fungsi format sederhana
+// Fungsi untuk format angka ke format Rupiah (contoh: 3000000 -> "Rp 3.000.000")
 const formatHarga = (angka) => {
     return 'Rp ' + angka.toLocaleString('id-ID');
 };
 
 function KalkulatorHarga() {
+    // State untuk menyimpan pilihan user (framework, tipe, kategori)
     const [pilihan, setPilihan] = useState({
         framework: null,
         tipe: null,
         kategori: null,
     });
 
+    // Fungsi untuk mengubah pilihan berdasarkan kunci (framework/tipe/kategori)
     const gantiPilihan = (kunci, data) => {
         setPilihan(prev => ({ ...prev, [kunci]: data }));
     };
 
+    // Hitung total harga dari semua pilihan
     const total =
-        (pilihan.framework?.price || 0) +
-        (pilihan.tipe?.price || 0) +
-        (pilihan.kategori?.price || 0);
+        (pilihan.framework?.harga || 0) +
+        (pilihan.tipe?.harga || 0) +
+        (pilihan.kategori?.harga || 0);
 
     return (
         <section id="harga" className="kalkulator">
@@ -31,7 +34,7 @@ function KalkulatorHarga() {
                     <p>Pilih kebutuhan Anda untuk estimasi harga website.</p>
                 </div>
 
-                {/* Langkah 1: Framework */}
+                {/* Pilih Framework */}
                 <div className="kalkulator-kategori">
                     <h3>Langkah 1: Pilih Framework</h3>
                     <div className="kalkulator-opsi-grid">
@@ -42,14 +45,14 @@ function KalkulatorHarga() {
                                 onClick={() => gantiPilihan('framework', f)}
                             >
                                 <div className="kalkulator-kartu-ikon">{f.icon}</div>
-                                <div className="kalkulator-kartu-nama">{f.name}</div>
-                                <div className="kalkulator-kartu-harga">{formatHarga(f.price)}</div>
+                                <div className="kalkulator-kartu-nama">{f.nama}</div>
+                                <div className="kalkulator-kartu-harga">{formatHarga(f.harga)}</div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Langkah 2: Tipe */}
+                {/* Tipe Web */}
                 <div className="kalkulator-kategori">
                     <h3>Langkah 2: Tipe Website</h3>
                     <div className="kalkulator-opsi-grid">
@@ -60,14 +63,14 @@ function KalkulatorHarga() {
                                 onClick={() => gantiPilihan('tipe', t)}
                             >
                                 <div className="kalkulator-kartu-ikon">{t.icon}</div>
-                                <div className="kalkulator-kartu-nama">{t.name}</div>
-                                <div className="kalkulator-kartu-harga">{formatHarga(t.price)}</div>
+                                <div className="kalkulator-kartu-nama">{t.nama}</div>
+                                <div className="kalkulator-kartu-harga">{formatHarga(t.harga)}</div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Langkah 3: Kategori */}
+                {/* Kategori Web */}
                 <div className="kalkulator-kategori">
                     <h3>Langkah 3: Kategori Website</h3>
                     <div className="kalkulator-opsi-grid">
@@ -78,35 +81,35 @@ function KalkulatorHarga() {
                                 onClick={() => gantiPilihan('kategori', c)}
                             >
                                 <div className="kalkulator-kartu-ikon">{c.icon}</div>
-                                <div className="kalkulator-kartu-nama">{c.name}</div>
-                                <div className="kalkulator-kartu-harga">{formatHarga(c.price)}</div>
+                                <div className="kalkulator-kartu-nama">{c.nama}</div>
+                                <div className="kalkulator-kartu-harga">{formatHarga(c.harga)}</div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Ringkasan */}
+                {/* Ringkasan Pilihan & Total Harga */}
                 <div className="kalkulator-ringkasan">
                     <h3 className="kalkulator-ringkasan-judul">Ringkasan Pilihan</h3>
 
                     <div className="kalkulator-ringkasan-item">
                         <span className="kalkulator-ringkasan-label">Framework</span>
                         <span className={`kalkulator-ringkasan-nilai ${!pilihan.framework ? 'kosong' : ''}`}>
-                            {pilihan.framework ? `${pilihan.framework.name} — ${formatHarga(pilihan.framework.price)}` : 'Belum dipilih'}
+                            {pilihan.framework ? `${pilihan.framework.nama} — ${formatHarga(pilihan.framework.harga)}` : 'Belum dipilih'}
                         </span>
                     </div>
 
                     <div className="kalkulator-ringkasan-item">
                         <span className="kalkulator-ringkasan-label">Tipe Website</span>
                         <span className={`kalkulator-ringkasan-nilai ${!pilihan.tipe ? 'kosong' : ''}`}>
-                            {pilihan.tipe ? `${pilihan.tipe.name} — ${formatHarga(pilihan.tipe.price)}` : 'Belum dipilih'}
+                            {pilihan.tipe ? `${pilihan.tipe.nama} — ${formatHarga(pilihan.tipe.harga)}` : 'Belum dipilih'}
                         </span>
                     </div>
 
                     <div className="kalkulator-ringkasan-item">
                         <span className="kalkulator-ringkasan-label">Kategori</span>
                         <span className={`kalkulator-ringkasan-nilai ${!pilihan.kategori ? 'kosong' : ''}`}>
-                            {pilihan.kategori ? `${pilihan.kategori.name} — ${formatHarga(pilihan.kategori.price)}` : 'Belum dipilih'}
+                            {pilihan.kategori ? `${pilihan.kategori.nama} — ${formatHarga(pilihan.kategori.harga)}` : 'Belum dipilih'}
                         </span>
                     </div>
 

@@ -1,10 +1,7 @@
-/* ============================
-   Portfolio Styles - Monochrome Minimalist
-   ============================ */
 .portfolio {
     padding: 4rem 0;
     background: #ffffff;
-    border-top: 1px solid var(--warna-border);
+    border-top: 1px solid var(--color-border);
 }
 
 .portfolio-kontainer {
@@ -28,7 +25,7 @@
 .portfolio-header h2 {
     font-size: 2.25rem;
     font-weight: 900;
-    color: var(--warna-hitam);
+    color: var(--color-black);
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: -0.02em;
@@ -36,13 +33,13 @@
 
 .portfolio-header p {
     font-size: 1rem;
-    color: var(--warna-teks-sekunder);
+    color: var(--color-text-secondary);
 }
 
 .portfolio-loading {
     text-align: center;
     padding: 4rem;
-    color: var(--warna-teks-sekunder);
+    color: var(--color-text-secondary);
     font-size: 0.8125rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -51,12 +48,11 @@
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Larger focus on minimalist */
     gap: 3rem;
 }
 
 .portfolio-kartu {
-    background: var(--warna-putih);
+    background: var(--color-white);
     border-radius: 0px;
     overflow: hidden;
     transition: all 0.25s ease;
@@ -66,7 +62,7 @@
     position: relative;
     height: 350px;
     overflow: hidden;
-    background: var(--warna-abu-terang);
+    background: var(--color-gray-light);
     margin-bottom: 1.5rem;
 }
 
@@ -99,8 +95,8 @@
     top: 1rem;
     left: 1rem;
     padding: 0.35rem 0.75rem;
-    background: var(--warna-hitam);
-    color: var(--warna-putih);
+    background: var(--color-black);
+    color: var(--color-white);
     font-size: 0.65rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -114,14 +110,14 @@
 .portfolio-judul {
     font-size: 1.125rem;
     font-weight: 800;
-    color: var(--warna-hitam);
+    color: var(--color-black);
     margin-bottom: 0.75rem;
     text-transform: uppercase;
     letter-spacing: -0.01em;
 }
 
 .portfolio-deskripsi {
-    color: var(--warna-teks-sekunder);
+    color: var(--color-text-secondary);
     font-size: 0.875rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -136,10 +132,10 @@
 .portfolio-tech-tag {
     font-size: 0.65rem;
     font-weight: 700;
-    color: var(--warna-abu-gelap);
+    color: var(--color-gray-dark);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border-bottom: 1px solid var(--warna-border);
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 2px;
 }
 

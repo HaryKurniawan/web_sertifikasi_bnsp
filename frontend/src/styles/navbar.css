@@ -1,6 +1,3 @@
-/* ============================
-   Navbar Styles - Monochrome Minimalist
-   ============================ */
 .navbar {
     position: fixed;
     top: 0;
@@ -8,7 +5,7 @@
     right: 0;
     z-index: 1000;
     background: #ffffff;
-    border-bottom: 1px solid var(--warna-border);
+    border-bottom: 1px solid var(--color-border);
     transition: all 0.25s ease;
 }
 
@@ -24,7 +21,7 @@
 .navbar-logo {
     font-size: 1.25rem;
     font-weight: 900;
-    color: var(--warna-hitam);
+    color: var(--color-black);
     letter-spacing: -0.05em;
     text-transform: uppercase;
 }
@@ -38,20 +35,20 @@
 .navbar-link {
     font-size: 0.8125rem;
     font-weight: 600;
-    color: var(--warna-teks);
+    color: var(--color-text);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     transition: all 0.15s ease;
 }
 
 .navbar-link:hover {
-    color: var(--warna-abu-gelap);
+    color: var(--color-gray-dark);
 }
 
 .navbar-cta {
     padding: 0.5rem 1rem;
-    background: var(--warna-hitam);
-    color: var(--warna-putih);
+    background: var(--color-black);
+    color: var(--color-white);
     border-radius: 0px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -63,7 +60,6 @@
     background: #333;
 }
 
-/* Mobile Menu */
 .navbar-toggle {
     display: none;
     flex-direction: column;
@@ -74,7 +70,7 @@
 .navbar-toggle span {
     width: 20px;
     height: 2px;
-    background: var(--warna-hitam);
+    background: var(--color-black);
 }
 
 @media (max-width: 768px) {
@@ -92,7 +88,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--warna-putih);
+        background: var(--color-white);
         flex-direction: column;
         justify-content: center;
         padding: 4rem;

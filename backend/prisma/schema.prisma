@@ -8,11 +8,6 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-// ===============================
-// PORTFOLIO MODELS
-// ===============================
-
-// Proyek Portfolio
 model Proyek {
   id        Int      @id @default(autoincrement())
   nama      String
@@ -21,7 +16,6 @@ model Proyek {
   kategori  String
   teknologi String
   link      String?
-  aktif     Boolean  @default(true)
   tanggal   DateTime @default(now())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

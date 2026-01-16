@@ -5,7 +5,6 @@ const prisma = new PrismaClient();
 export const getProyek = async (req, res) => {
     try {
         const proyek = await prisma.proyek.findMany({
-            where: { aktif: true },
             orderBy: { tanggal: 'desc' },
         });
         res.json({ sukses: true, data: proyek });
@@ -16,5 +15,5 @@ export const getProyek = async (req, res) => {
 };
 
 export default {
-    getProyek,
+    getProyek
 };
