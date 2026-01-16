@@ -1,10 +1,7 @@
-import prisma from '../prisma.js';
+import { PrismaClient } from '@prisma/client';
 
-// ===============================
-// PUBLIC ROUTES
-// ===============================
+const prisma = new PrismaClient();
 
-// Get Proyek Portfolio (active only)
 export const getProyek = async (req, res) => {
     try {
         const proyek = await prisma.proyek.findMany({

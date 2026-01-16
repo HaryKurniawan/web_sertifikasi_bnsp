@@ -92,21 +92,21 @@ function KalkulatorHarga() {
                     <div className="kalkulator-ringkasan-item">
                         <span className="kalkulator-ringkasan-label">Framework</span>
                         <span className={`kalkulator-ringkasan-nilai ${!pilihan.framework ? 'kosong' : ''}`}>
-                            {pilihan.framework ? pilihan.framework.name : 'Belum dipilih'}
+                            {pilihan.framework ? `${pilihan.framework.name} — ${formatHarga(pilihan.framework.price)}` : 'Belum dipilih'}
                         </span>
                     </div>
 
                     <div className="kalkulator-ringkasan-item">
                         <span className="kalkulator-ringkasan-label">Tipe Website</span>
                         <span className={`kalkulator-ringkasan-nilai ${!pilihan.tipe ? 'kosong' : ''}`}>
-                            {pilihan.tipe ? pilihan.tipe.name : 'Belum dipilih'}
+                            {pilihan.tipe ? `${pilihan.tipe.name} — ${formatHarga(pilihan.tipe.price)}` : 'Belum dipilih'}
                         </span>
                     </div>
 
                     <div className="kalkulator-ringkasan-item">
                         <span className="kalkulator-ringkasan-label">Kategori</span>
                         <span className={`kalkulator-ringkasan-nilai ${!pilihan.kategori ? 'kosong' : ''}`}>
-                            {pilihan.kategori ? pilihan.kategori.name : 'Belum dipilih'}
+                            {pilihan.kategori ? `${pilihan.kategori.name} — ${formatHarga(pilihan.kategori.price)}` : 'Belum dipilih'}
                         </span>
                     </div>
 

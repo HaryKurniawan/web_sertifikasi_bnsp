@@ -1,7 +1,9 @@
 import { createProyek, updateProyek, deleteProyek } from '../api/api';
 
+// Factory function: menghasilkan semua handler untuk CRUD proyek
 export const getHandlers = (state, updateState, fetchData, initialForm) => {
     return {
+        // Menangani perubahan input form
         handleChange: (e) => {
             const { name, value } = e.target;
             updateState({
@@ -9,6 +11,7 @@ export const getHandlers = (state, updateState, fetchData, initialForm) => {
             });
         },
 
+        // Mengirim data form (create / update)
         handleSubmit: async (e) => {
             e.preventDefault();
             updateState({ message: null });
@@ -36,6 +39,7 @@ export const getHandlers = (state, updateState, fetchData, initialForm) => {
             }
         },
 
+        // Mengisi form dengan data proyek yang akan diedit
         handleEdit: (item) => {
             updateState({
                 editing: item.id,
@@ -50,6 +54,7 @@ export const getHandlers = (state, updateState, fetchData, initialForm) => {
             });
         },
 
+        // Menghapus proyek berdasarkan ID
         handleDelete: async (id) => {
             if (!confirm('Yakin ingin menghapus proyek ini?')) return;
 
@@ -64,6 +69,7 @@ export const getHandlers = (state, updateState, fetchData, initialForm) => {
             }
         },
 
+        // Membatalkan mode edit dan reset form
         handleCancel: () => {
             updateState({ editing: null, form: initialForm });
         }

@@ -9,7 +9,13 @@
 .kontak-kontainer {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 769px) {
+    .kontak-kontainer {
+        padding: 0 2rem;
+    }
 }
 
 .kontak-grid {

@@ -10,7 +10,13 @@
 .portfolio-kontainer {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 769px) {
+    .portfolio-kontainer {
+        padding: 0 2rem;
+    }
 }
 
 .portfolio-header {

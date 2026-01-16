@@ -15,13 +15,19 @@
 .hero-kontainer {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 1;
+}
+
+@media (min-width: 769px) {
+    .hero-kontainer {
+        padding: 0 2rem;
+    }
 }
 
 .hero-konten {

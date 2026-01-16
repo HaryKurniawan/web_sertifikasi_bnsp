@@ -8,9 +8,6 @@ import {
 
 const router = Router();
 
-// ===============================
-// Proyek CRUD
-// ===============================
 router.get('/proyek', getAllProyek);
 router.post('/proyek', createProyek);
 router.put('/proyek/:id', updateProyek);

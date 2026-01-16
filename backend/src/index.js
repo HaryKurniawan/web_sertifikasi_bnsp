@@ -3,49 +3,16 @@ import cors from 'cors';
 import publicRoutes from './routes/publicRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 
-console.log('--- Server initializing ---');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// ===============================
-// ROUTES
-// ===============================
-
-// Public API routes
+// Routes
 app.use('/api', publicRoutes);
-
-// Admin API routes
 app.use('/api/admin', adminRoutes);
 
-// Health check
-app.get('/api/health', (req, res) => {
-    res.json({ sukses: true, pesan: 'Server berjalan dengan baik!' });
+app.listen(PORT, () => {
+    console.log(`🚀 Server on http://localhost:${PORT}`);
 });
-
-app.get('/', (req, res) => {
-    res.json({ sukses: true, pesan: 'API Hyyven IS LIVE' });
-});
-
-// 404 handler
-app.use((req, res) => {
-    res.status(404).json({ sukses: false, pesan: 'Endpoint tidak ditemukan' });
-});
-
-// Error handler
-app.use((err, req, res, next) => {
-    console.error('Server error:', err);
-    res.status(500).json({ sukses: false, pesan: 'Terjadi kesalahan server' });
-});
-
-// Start server (only if not on Vercel)
-if (process.env.NODE_ENV !== 'production') {
-    app.listen(PORT, () => {
-        console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
-    });
-}
-
-export default app;

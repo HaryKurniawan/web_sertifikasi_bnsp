@@ -3,7 +3,6 @@ import { getProyek } from '../controllers/publicController.js';
 
 const router = Router();
 
-// Portfolio
 router.get('/proyek', getProyek);
 
 export default router;

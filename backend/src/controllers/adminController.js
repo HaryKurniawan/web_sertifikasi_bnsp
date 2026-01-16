@@ -1,8 +1,6 @@
-import prisma from '../prisma.js';
+import { PrismaClient } from '@prisma/client';
 
-// ===============================
-// PROYEK CRUD
-// ===============================
+const prisma = new PrismaClient();
 
 export const getAllProyek = async (req, res) => {
     try {
