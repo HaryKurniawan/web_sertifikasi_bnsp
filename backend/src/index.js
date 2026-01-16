@@ -3,6 +3,7 @@ import cors from 'cors';
 import publicRoutes from './routes/publicRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 
+console.log('--- Server initializing ---');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -23,6 +24,10 @@ app.use('/api/admin', adminRoutes);
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({ sukses: true, pesan: 'Server berjalan dengan baik!' });
+});
+
+app.get('/', (req, res) => {
+    res.json({ sukses: true, pesan: 'API Hyyven IS LIVE' });
 });
 
 // 404 handler
