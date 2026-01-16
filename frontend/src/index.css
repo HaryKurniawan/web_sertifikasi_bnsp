@@ -1,0 +1,227 @@
+/* ============================
+   CSS Variables - Monochrome Minimalist
+   ============================ */
+:root {
+  /* Monochrome Palette */
+  --warna-primer: #000000;
+  --warna-primer-gelap: #000000;
+  --warna-primer-terang: #262626;
+
+  /* Neutral Colors */
+  --warna-putih: #ffffff;
+  --warna-hitam: #000000;
+  --warna-abu-ekstra-terang: #fafafa;
+  --warna-abu-terang: #f5f5f5;
+  --warna-abu: #e5e5e5;
+  --warna-abu-gelap: #737373;
+  --warna-teks: #171717;
+  --warna-teks-sekunder: #525252;
+  --warna-border: #e5e5e5;
+}
+
+/* ============================
+   Reset & Base Styles
+   ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--warna-teks);
+  background-color: var(--warna-putih);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.15s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(1);
+  /* Monochrome aesthetic for images */
+  transition: all 0.25s ease;
+}
+
+img:hover {
+  filter: grayscale(0);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+/* ============================
+   Typography
+   ============================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--warna-hitam);
+  line-height: 1.1;
+}
+
+/* ============================
+   Container
+   ============================ */
+.kontainer {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================
+   Section
+   ============================ */
+.seksi {
+  padding: 6rem 0;
+}
+
+.seksi-judul {
+  text-align: left;
+  /* Minimalist often uses left alignment */
+  margin-bottom: 4rem;
+  max-width: 600px;
+}
+
+.seksi-judul h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.seksi-judul h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 2px;
+  background: var(--warna-hitam);
+}
+
+.seksi-judul p {
+  font-size: 1rem;
+  color: var(--warna-teks-sekunder);
+  line-height: 1.7;
+}
+
+/* ============================
+   Tombol
+   ============================ */
+.tombol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tombol-primer {
+  background: var(--warna-hitam);
+  color: var(--warna-putih);
+}
+
+.tombol-primer:hover {
+  background: #333;
+}
+
+.tombol-sekunder {
+  background: transparent;
+  color: var(--warna-hitam);
+  border: 1px solid var(--warna-hitam);
+}
+
+.tombol-sekunder:hover {
+  background: var(--warna-hitam);
+  color: var(--warna-putih);
+}
+
+/* ============================
+   Kartu
+   ============================ */
+.kartu {
+  background: var(--warna-putih);
+  border: 1px solid var(--warna-border);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.kartu:hover {
+  border-color: var(--warna-hitam);
+}
+
+/* ============================
+   Grid Layout
+   ============================ */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .seksi-judul h2 {
+    font-size: 1.75rem;
+  }
+
+  .kontainer {
+    padding: 0 1rem;
+  }
+}

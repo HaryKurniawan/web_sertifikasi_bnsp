@@ -1,0 +1,129 @@
+/* ============================
+   Footer Styles - Simplified Classic Grid
+   ============================ */
+.footer {
+    padding: 5rem 0 3rem;
+    background: #000;
+    color: #fff;
+    border-top: 1px solid #111;
+}
+
+.footer-kontainer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* Brand */
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand p {
+    color: #888;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    max-width: 320px;
+}
+
+.footer-sosmed {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-sosmed a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.footer-sosmed a:hover {
+    opacity: 1;
+}
+
+/* Links */
+.footer-links h4 {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* Bottom */
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-legal a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+    color: #888;
+}
+
+@media (max-width: 968px) {
+    .footer-grid {
+        grid-template_columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}

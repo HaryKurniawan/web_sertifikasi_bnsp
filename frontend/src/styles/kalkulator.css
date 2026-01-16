@@ -1,0 +1,228 @@
+/* ============================
+   Kalkulator Harga Styles - Monochrome Minimalist
+   ============================ */
+.kalkulator {
+    padding: 4rem 0;
+    background: #ffffff;
+    border-top: 1px solid var(--warna-border);
+}
+
+.kalkulator-kontainer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.kalkulator-header {
+    text-align: left;
+    margin-bottom: 4rem;
+    max-width: 600px;
+}
+
+.kalkulator-header h2 {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: var(--warna-hitam);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.kalkulator-header p {
+    font-size: 1rem;
+    color: var(--warna-teks-sekunder);
+}
+
+/* Kategori Pilihan */
+.kalkulator-kategori {
+    margin-bottom: 4rem;
+}
+
+.kalkulator-kategori-judul {
+    color: var(--warna-hitam);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.kalkulator-kategori-judul span {
+    font-weight: 400;
+    color: var(--warna-abu-gelap);
+    font-size: 0.75rem;
+}
+
+.kalkulator-opsi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0;
+    border: 1px solid var(--warna-border);
+}
+
+/* Kartu Opsi */
+.kalkulator-kartu {
+    background: var(--warna-putih);
+    border: 0.5px solid var(--warna-border);
+    padding: 2.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+.kalkulator-kartu:hover {
+    background: var(--warna-abu-terang);
+}
+
+.kalkulator-kartu.terpilih {
+    background: var(--warna-hitam);
+    border-color: var(--warna-hitam);
+    color: var(--warna-putih);
+}
+
+.kalkulator-kartu.terpilih .kalkulator-kartu-nama,
+.kalkulator-kartu.terpilih .kalkulator-kartu-harga {
+    color: var(--warna-putih);
+}
+
+.kalkulator-kartu-ikon {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    filter: grayscale(1);
+}
+
+.kalkulator-kartu-nama {
+    color: var(--warna-hitam);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.kalkulator-kartu-harga {
+    color: var(--warna-abu-gelap);
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+/* Ringkasan */
+.kalkulator-ringkasan {
+    background: var(--warna-abu-ekstra-terang);
+    border: 1px solid var(--warna-border);
+    padding: 2.5rem;
+    margin-top: 4rem;
+    max-width: 600px;
+}
+
+.kalkulator-ringkasan-judul {
+    color: var(--warna-hitam);
+    font-size: 0.875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--warna-hitam);
+}
+
+.kalkulator-ringkasan-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    color: var(--warna-teks);
+    font-size: 0.875rem;
+}
+
+.kalkulator-ringkasan-label {
+    font-weight: 600;
+    color: var(--warna-abu-gelap);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.kalkulator-ringkasan-nilai {
+    font-weight: 600;
+}
+
+.kalkulator-ringkasan-nilai.kosong {
+    color: var(--warna-abu-gelap);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.kalkulator-ringkasan-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--warna-border);
+}
+
+.kalkulator-ringkasan-total-label {
+    color: var(--warna-hitam);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.kalkulator-ringkasan-total-nilai {
+    color: var(--warna-hitam);
+    font-size: 1.75rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+}
+
+.kalkulator-catatan {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: transparent;
+    border: 1px dashed var(--warna-border);
+    color: var(--warna-teks-sekunder);
+    font-size: 0.75rem;
+}
+
+.kalkulator-aksi {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.kalkulator-tombol {
+    padding: 1rem 2rem;
+    background: var(--warna-hitam);
+    color: var(--warna-putih);
+    border-radius: 0px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.kalkulator-tombol:hover {
+    background: #333;
+}
+
+@media (max-width: 768px) {
+    .kalkulator-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .kalkulator-opsi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kalkulator-ringkasan-total-nilai {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .kalkulator-opsi-grid {
+        grid-template-columns: 1fr;
+    }
+}

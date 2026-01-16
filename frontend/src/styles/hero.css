@@ -1,0 +1,201 @@
+/* ============================
+   Hero Styles - Monochrome Minimalist
+   ============================ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    /* Minimal vertical padding for safety */
+}
+
+.hero-kontainer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-konten {
+    color: var(--warna-hitam);
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    padding: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+    color: var(--warna-abu-gelap);
+}
+
+.hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--warna-hitam);
+    border-radius: 0;
+}
+
+.hero-judul {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+.hero-judul span {
+    display: block;
+    color: var(--warna-abu-gelap);
+}
+
+.hero-deskripsi {
+    font-size: 1.125rem;
+    color: var(--warna-teks-sekunder);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.hero-tombol-grup {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.hero-tombol-primer {
+    padding: 1rem 2rem;
+    background: var(--warna-hitam);
+    color: var(--warna-putih);
+    border-radius: 0px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.hero-tombol-primer:hover {
+    background: #333;
+}
+
+.hero-tombol-sekunder {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--warna-hitam);
+    border: 1px solid var(--warna-hitam);
+    border-radius: 0px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.hero-tombol-sekunder:hover {
+    background: var(--warna-hitam);
+    color: var(--warna-putih);
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-gambar-kontainer {
+    position: relative;
+    border-radius: 0px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero-gambar {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(1);
+    transition: all 0.25s ease;
+}
+
+.hero-gambar:hover {
+    filter: grayscale(0);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--warna-border);
+    padding-top: 2rem;
+}
+
+.hero-stat-item {
+    text-align: left;
+}
+
+.hero-stat-angka {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--warna-hitam);
+    margin-bottom: 0.25rem;
+}
+
+.hero-stat-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--warna-abu-gelap);
+}
+
+@media (max-width: 968px) {
+    .hero-kontainer {
+        grid-template-columns: 1fr;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-judul {
+        font-size: 2.75rem;
+    }
+
+    .hero-visual {
+        order: -1;
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-judul {
+        font-size: 2.25rem;
+    }
+
+    .hero-tombol-grup {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-tombol-primer,
+    .hero-tombol-sekunder {
+        width: 100%;
+        text-align: center;
+    }
+}

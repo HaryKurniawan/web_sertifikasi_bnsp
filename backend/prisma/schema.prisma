@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ===============================
+// PORTFOLIO MODELS
+// ===============================
+
+// Proyek Portfolio
+model Proyek {
+  id        Int      @id @default(autoincrement())
+  nama      String
+  deskripsi String
+  gambar    String
+  kategori  String
+  teknologi String
+  link      String?
+  aktif     Boolean  @default(true)
+  tanggal   DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("proyek")
+}

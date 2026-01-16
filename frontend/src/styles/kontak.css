@@ -1,0 +1,130 @@
+/* ============================
+   Kontak Styles - Ultra Minimalist
+   ============================ */
+.kontak {
+    padding: 8rem 0;
+    background: #ffffff;
+}
+
+.kontak-kontainer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.kontak-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+}
+
+/* Info Side */
+.kontak-header h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.kontak-header p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 400px;
+}
+
+.kontak-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.kontak-item span {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #999;
+    margin-bottom: 0.5rem;
+}
+
+.kontak-item a {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease;
+}
+
+.kontak-item a:hover {
+    border-bottom-color: #000;
+}
+
+/* Form Side */
+.kontak-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-grup input,
+.form-grup textarea {
+    width: 100%;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 2px solid #f0f0f0;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.form-grup input:focus,
+.form-grup textarea:focus {
+    outline: none;
+    border-bottom-color: #000;
+}
+
+.form-grup textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+.tombol-kirim {
+    padding: 1.25rem 2.5rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.2s ease;
+}
+
+.tombol-kirim:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 968px) {
+    .kontak {
+        padding: 5rem 0;
+    }
+
+    .kontak-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .kontak-header h2 {
+        font-size: 2.5rem;
+    }
+}
